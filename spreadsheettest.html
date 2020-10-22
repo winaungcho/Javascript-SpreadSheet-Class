@@ -1,0 +1,84 @@
+	<html>
+	<meta name="viewport" content="width=device-width">
+	<style>
+
+	html,
+	body {
+		margin: 20px;
+		padding: 0;
+		height: 100%;
+	}
+	
+	button {
+		max-height: 50px;
+		padding: 5px;
+	}
+	
+	.fixedheadertable {
+		max-width: 700px;
+		max-height: 600px;
+		overflow: scroll;
+	}
+	
+	table {
+		border: 2px solid #ddf;
+		border-collapse: collapse;
+	}
+	
+	td,
+	th {
+		position: relative;
+		white-space: wrap;
+		border: 1px solid #ddd;
+		padding: 4px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	
+	th {
+		background-color: #eee;
+		position: -webkit-sticky;
+		position: sticky;
+		text-align: center;
+		min-width: 100px;
+		top: -1px;
+		z-index: 2;
+	}
+	
+	th:first-of-type {
+		left: 0;
+		min-width: 50px;
+		z-index: 3;
+	}
+	
+	tbody tr td:first-of-type {
+		background-color: #eee;
+		position: -webkit-sticky;
+		position: sticky;
+		left: -1px;
+		text-align: left;
+	}
+	
+	.hover {
+		background: yellow;
+	}
+	
+	.selected {
+		background-color: #aaa;
+	}
+	
+	
+	</style>
+	<script src="spreadsheet.js"></script>
+
+	<body>
+		<div class="fixedheadertable" id="dyntable"> </div>
+		<div id="status"></div>
+		<script>
+		var spreadsheet = new SpreadSheet();
+		spreadsheet.addTable(20, 20);
+		</script>
+	
+	</body>
+
+	</html>
